@@ -1,0 +1,9 @@
+O algoritmo recebe um array arr com tamanho n e um valor de busca x. Ele percorre o
+array procurando por x e retorna o índice em que o elemento foi encontrado. Se o
+elemento não for encontrado, o algoritmo retorna -1.
+
+No exemplo acima, o algoritmo é usado para procurar o valor 15 no array {10, 7, 8, 15, 6}.
+O tamanho do array é calculado usando sizeof e o resultado é passado para a função
+sequentialSearch. O resultado da busca é armazenado na variável result e é verificado
+se é -1, indicando que o elemento não foi encontrado, ou um número positivo, indicando
+o índice em que o elemento foi encontrado.
