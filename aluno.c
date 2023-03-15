@@ -25,9 +25,9 @@ void registraAluno(FILE *arquivo, int quant)
     printf("Informe seu documento:\n");
     scanf(" %d", &aluno.documento);
 
-    fprintf(fp, "Nome: %s\n", aluno.nome);
-    fprintf(fp, "Nº da matricula: %d\n", aluno.matricula);
-    fprintf(fp, "Nº do documento: %d\n", aluno.documento);
+    fprintf(fp, "%s\n", aluno.nome);
+    fprintf(fp, "%d\n", aluno.matricula);
+    fprintf(fp, "%d\n", aluno.documento);
     fprintf(fp, "\n");
     printf("\n");
     }

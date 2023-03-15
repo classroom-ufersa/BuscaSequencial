@@ -16,11 +16,5 @@ int main(void)
     printf("Digite 1 para buscar por: nome\n");
     printf("Digite 2 para buscar por: matricula\n");
     scanf(" %d", &opcao);
-    switch(opcao)
-    {
-        case 1: buscaSequencial(); break;
-        case 2: buscaSequencial(); break;
-    }
-    
     return 0;
 }
