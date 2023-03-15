@@ -1,2 +1,2 @@
 # BuscaSequencial
-oi
+Algoritmo de busca linear ou sequencial
