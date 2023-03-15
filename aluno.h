@@ -9,4 +9,4 @@ typedef struct aluno Aluno;
 //Obejtivo: registra um aluno com os tipos da struct Aluno;
 void registraAluno(FILE* arquivo, int quant);
 
-int buscaSequencial(FILE *arquivo);
+void buscaSequencial(FILE *arquivo);

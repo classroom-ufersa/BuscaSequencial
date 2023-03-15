@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 #include"aluno.h"
 
 struct aluno
@@ -34,4 +35,27 @@ void registraAluno(FILE *arquivo, int quant)
     
     fclose(fp);
 
+}
+
+void buscaSequencial(FILE *arquivo)
+{
+    FILE *fp;
+    char str[100];
+    char vetor_string[4][10];
+    int i=0;
+    fp=fopen("arquivo", "rt");
+    if(fp==NULL){
+        printf("Deu errado\n");
+    }
+
+     while(fgets(str, 100, fp) != NULL){
+        strcpy(vetor_string[i], str);
+        i=i+1;
+    }
+    
+    fclose(fp);
+
+    for (int i = 0; i <4; i++) {
+        printf("%s\n", vetor_string[i]);
+    }
 }
