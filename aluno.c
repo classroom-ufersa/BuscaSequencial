@@ -17,9 +17,7 @@ void registraAluno(FILE *arquivo, int quant)
     if(fp==NULL){
         printf("Erro ao abrir o arquivo\n");
     }
-    
     for(i=0; i<quant; i++){
-    fprintf(fp, "Aluno - %d\n", i+1);
     printf("Informe seu nome:\n");
     scanf(" %[^\n]s", aluno.nome);
     printf("Informe sua matricula:\n");
@@ -36,10 +34,4 @@ void registraAluno(FILE *arquivo, int quant)
     
     fclose(fp);
 
-}
-
-
-int buscaSequencial(FILE* arquivo)
-{
-    
 }
