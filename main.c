@@ -5,22 +5,32 @@
 
 int main(void)
 {
-    int quantidadeAlunos, opcao;
-    printf("*****Registrar Aluno*****\n");
-    printf("Deseja registrar quantos alunos:");
-    scanf(" %d", &quantidadeAlunos);
-    FILE *fp;
-    registraAluno(fp, quantidadeAlunos);
-
-    printf("Deseja buscar um aluno por qual dado:\n");
-    printf("Digite 1 para buscar por: nome\n");
-    printf("Digite 2 para buscar por: matricula\n");
-    scanf(" %d", &opcao);
-    switch(opcao)
-    {
-        case 1: buscaSequencial(); break;
-        case 2: buscaSequencial(); break;
-    }
+    //Declaração de variaveis.
+    int opcao1, opcao2;
     
+    //Pergunta ao usuário o que ele deseja.
+    printf("Deseja fazer qual operação:\n");
+    printf("Digite 1: para cadastrar um novo aluno\n");
+    printf("Digite 2: para buscar por um aluno já cadastrado\n");
+    scanf(" %d", &opcao1);
+    
+    //
+    switch(opcao1)
+    {
+        case 1:
+            registraAluno("arquivo.txt");
+            printf("Aluno cadastrado com sucesso!\n"); break;
+        case 2:
+            printf("Deseja buscar por qual dado:\n");
+            printf("Digite 1: para buscar pelo nome");
+            printf("Digite 2: para buscar pelo número da matricula\n");
+            switch(opcao2)
+            {
+                case 1:printf("opção 1\n");break;
+
+                case 2:printf("opção 2\n");break;
+                        
+            }
+    }
     return 0;
 }

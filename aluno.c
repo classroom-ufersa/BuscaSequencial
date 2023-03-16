@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 #include"aluno.h"
 
 struct aluno
@@ -8,38 +9,33 @@ struct aluno
     int documento;
 };
 
-void registraAluno(FILE *arquivo, int quant)
+int registraAluno(char *arquivo)
 {
+    //Declaração da variaveis e ponteiro.
     Aluno aluno;
-    int i;
     FILE *fp;
-    fp=fopen("arquivo", "wt");
+    //w(whrite) para criar o arquivo caso não exista.
+    fp=fopen(arquivo, "wt"); 
     if(fp==NULL){
         printf("Erro ao abrir o arquivo\n");
+        return 1;
     }
-    
-    for(i=0; i<quant; i++){
-    fprintf(fp, "Aluno - %d\n", i+1);
+
+    //Imprime na tela do usuário.
     printf("Informe seu nome:\n");
     scanf(" %[^\n]s", aluno.nome);
     printf("Informe sua matricula:\n");
     scanf(" %d", &aluno.matricula);
     printf("Informe seu documento:\n");
     scanf(" %d", &aluno.documento);
-
-    fprintf(fp, "Nome: %s\n", aluno.nome);
-    fprintf(fp, "Nº da matricula: %d\n", aluno.matricula);
-    fprintf(fp, "Nº do documento: %d\n", aluno.documento);
-    fprintf(fp, "\n");
-    printf("\n");
-    }
     
+    //Escreve os dados que o usuário digitou no arquivo.
+    //Temos aqui o seguinto problema:
+    //Como escrever os dados de um aluno sem apagar os dados já escritos de outro aluno no arquivo?
+    //Possiveis soluções:
+    //1. Saber o fim de cada linha, depois pular uma linha e escrever o novos dados.
+    fprintf(fp, "%s %d %d\n", aluno.nome, aluno.matricula, aluno.documento);
+
+    //fecha o arquivo
     fclose(fp);
-
-}
-
-
-int buscaSequencial(FILE* arquivo)
-{
-    
 }
