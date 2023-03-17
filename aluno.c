@@ -46,7 +46,7 @@ int quantLinhas(char *arquivo)
     FILE *fp;
     fp=fopen(arquivo, "rt");
     //Temos aqui o seguinte problema:
-    //Como será a saída do arquivo
+    //Como será a saída do arquivo?
     //Exmplos:
     //1. Charlys 890 123 seguido dos dados de outros alunos
     //2. Charlys 890 123
