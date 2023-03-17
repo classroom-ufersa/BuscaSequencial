@@ -22,11 +22,12 @@ int main(void)
             printf("Aluno cadastrado com sucesso!\n"); break;
         case 2:
             printf("Deseja buscar por qual dado:\n");
-            printf("Digite 1: para buscar pelo nome");
+            printf("Digite 1: para buscar pelo nome\n\n");
             printf("Digite 2: para buscar pelo número da matricula\n");
+            scanf(" %d", &opcao2);
             switch(opcao2)
             {
-                case 1:printf("opção 1\n");break;
+                case 1:quantLinhas("arquivo.txt");break;
 
                 case 2:printf("opção 2\n");break;
                         
