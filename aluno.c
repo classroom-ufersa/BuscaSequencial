@@ -22,11 +22,11 @@ int registraAluno(char *arquivo)
     }
 
     //Imprime na tela do usuário.
-    printf("Informe seu nome:\n");
+    printf("Informe o nome:\n");
     scanf(" %[^\n]s", aluno.nome);
-    printf("Informe sua matricula:\n");
+    printf("Informe o número da matricula:\n");
     scanf(" %d", &aluno.matricula);
-    printf("Informe seu documento:\n");
+    printf("Informe o número do documento:\n");
     scanf(" %d", &aluno.documento);
     
     //Escreve os dados que o usuário digitou no arquivo.
