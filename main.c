@@ -14,7 +14,6 @@ int main(void)
     printf("Digite 2: para buscar por um aluno já cadastrado\n");
     scanf(" %d", &opcao1);
     
-    //
     switch(opcao1)
     {
         case 1:
@@ -22,7 +21,7 @@ int main(void)
             printf("Aluno cadastrado com sucesso!\n"); break;
         case 2:
             printf("Deseja buscar por qual dado:\n");
-            printf("Digite 1: para buscar pelo nome\n\n");
+            printf("Digite 1: para buscar pelo nome\n");
             printf("Digite 2: para buscar pelo número da matricula\n");
             scanf(" %d", &opcao2);
             switch(opcao2)
