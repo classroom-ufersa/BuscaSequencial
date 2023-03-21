@@ -27,7 +27,7 @@ int main(void)
             scanf(" %d", &opcao2);
             switch(opcao2)
             {
-                case 1:quantLinhas("arquivo.txt");break;
+                case 1:printf("opção 1");break;
 
                 case 2:printf("opção 2\n");break;
                         

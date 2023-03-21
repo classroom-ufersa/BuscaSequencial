@@ -40,27 +40,3 @@ int registraAluno(char *arquivo)
     fclose(fp);
 }
 
-int quantLinhas(char *arquivo)
-{
-    int c, nlinhas=0;
-    FILE *fp;
-    fp=fopen(arquivo, "rt");
-    //Temos aqui o seguinte problema:
-    //Como será a saída do arquivo?
-    //Exmplos:
-    //1. Charlys 890 123 seguido dos dados de outros alunos
-    //2. Charlys 890 123
-    //   Dados de outros alunos
-    //3. Charlys 
-    //   890  
-    //   123
-    //   Dados de outros alunos
-    while((c=fgetc(fp)) != EOF){
-        if(c=='\n'){
-            nlinhas++;
-        }
-    }
-    fclose(fp);
-    printf("Quantidades de linhas do arquivo: %d\n", nlinhas);
-    return nlinhas;
-}
