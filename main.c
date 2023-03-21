@@ -20,7 +20,7 @@ int main(void)
             registraAluno("arquivo.txt");
             printf("Aluno cadastrado com sucesso!\n"); break;
         case 2:
-            printf("Deseja buscar por qual dado:\n");
+            printf("Deseja buscar um aluno por qual dado:\n");
             printf("Digite 1: para buscar pelo nome\n");
             printf("Digite 2: para buscar pelo número da matricula\n");
             scanf(" %d", &opcao2);
