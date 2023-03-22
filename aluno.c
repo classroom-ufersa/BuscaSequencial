@@ -42,7 +42,51 @@ int registraAluno(char *arquivo)
 //1. Contar a quantidade de linhas do arquivo
 //2. Alocar dinamicamente usando a quantidade de linhas
 //3. Ler e preencher a matriz com o conteúdo do arquivo
-int vetorDeString(char *arquivo)
+char vetorDeString(char *arquivo)
 {
+    //Declaração das variaveis.
+    char linhaDoArquivo[50];
+    int i=0, nlinhas;
+    FILE *fp;
+    fp=fopen(arquivo, "rt");
+    if(fp==NULL){
+        printf("Erro ao abrir!\n");
+        return 1;
+    }
+    
+    //Estrutura para contar a quantidade de linhas do arquivo.
+    while(fgets(linhaDoArquivo, 50, fp) != NULL) {
+        nlinhas++;
+    }
+    
+    //Alocação da matriz para armazenar as linhas do arquivo.
+    char **matriz = (char **) malloc(nlinhas * sizeof(char *)); // aloca as linhas
+    for(i=0; i<nlinhas; i++) { // aloca as colunas
+        matriz[i] = (char *) malloc(50 * sizeof(char));
+    }
 
+    //Volta para o inicio do arquivo
+    rewind(fp);
+
+    //Ler e escrever as linhas do arquivo na matriz
+    i=0;
+    while(fgets(linhaDoArquivo, 50, fp) != NULL) {
+        strcpy(matriz[i], linhaDoArquivo);
+        i++;
+    }  
+
+    //Apenas um teste para ver as linhas lidas
+    printf("Strigs lidas:\n");
+    for(i=0; i<nlinhas; i++){
+        printf("%s", matriz[i]);
+    }
+
+    //Fecha o arquivo
+    fclose(fp);
+
+    //Libera a memória alocada.
+    for(i=0; i<nlinhas; i++){ 
+        free(matriz[i]);
+    }
+    free(matriz); 
 }

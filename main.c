@@ -31,8 +31,7 @@ int main(void)
                 case 1:
                     printf("Informe o nome do aluno:\n");
                     scanf(" %[^\n]", nome);
-                    printf("%s\n", nome); 
-                    printf("vetorDeString\n");
+                    vetorDeString("arquivo.txt");
                     printf("buscaSequencial-nome\n");break;
 
                 case 2:
