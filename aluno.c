@@ -10,12 +10,12 @@ struct aluno
     int documento;
 };
 
+//Função para registrar os dados dos alunos no arquivo.
 int registraAluno(char *arquivo)
 {
     //Declaração da variaveis e ponteiro.
     Aluno aluno;
     FILE *fp;
-    //w(whrite) para criar o arquivo caso não exista.
     fp=fopen(arquivo, "a"); 
     if(fp==NULL){
         printf("Erro ao abrir o arquivo\n");
@@ -37,3 +37,7 @@ int registraAluno(char *arquivo)
     fclose(fp);
 }
 
+int vetorDeString(char *arquivo)
+{
+
+}
