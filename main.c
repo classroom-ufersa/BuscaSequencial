@@ -7,6 +7,8 @@ int main(void)
 {
     //Declaração de variaveis.
     int opcao1, opcao2;
+    char nome[50];
+    int matricula;
     
     //Pergunta ao usuário o que ele deseja.
     printf("Deseja fazer qual operação:\n");
@@ -26,9 +28,19 @@ int main(void)
             scanf(" %d", &opcao2);
             switch(opcao2)
             {
-                case 1:printf("opção 1");break;
+                case 1:
+                    printf("Informe o nome do aluno:\n");
+                    scanf(" %[^\n]", nome);
+                    printf("%s\n", nome); 
+                    printf("vetorDeString\n");
+                    printf("buscaSequencial-nome\n");break;
 
-                case 2:printf("opção 2\n");break;
+                case 2:
+                    printf("Informe o número da matricula do aluno:\n");
+                    scanf(" %d", &matricula);
+                    printf("%d\n", matricula);
+                    printf("vetorDeString\n");
+                    printf("buscaSequencial-matricula\n");break;
                         
             }
     }

@@ -9,5 +9,3 @@ int registraAluno(char* arquivo);
 //Obejtivo: registra um aluno com os tipos da struct Aluno;
 //O ponteiro arquivo já armazena o nome do arquivo.
 
-
-
