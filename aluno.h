@@ -1,4 +1,3 @@
-
 //Funções do módulo aluno.h
 
 typedef struct aluno Aluno;
@@ -10,4 +9,4 @@ int registraAluno(char* arquivo);
 //Obejtivo: registra um aluno com os tipos da struct Aluno;
 //O ponteiro arquivo já armazena o nome do arquivo.
 
-
+char vetorDeString(char *arquivo);
