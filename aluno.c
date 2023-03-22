@@ -37,6 +37,11 @@ int registraAluno(char *arquivo)
     fclose(fp);
 }
 
+//Função para ler e escrever os dados dos alunos em uma matriz dinâmica.
+//Partes da função:
+//1. Contar a quantidade de linhas do arquivo
+//2. Alocar dinamicamente usando a quantidade de linhas
+//3. Ler e preencher a matriz com o conteúdo do arquivo
 int vetorDeString(char *arquivo)
 {
 
