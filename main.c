@@ -12,6 +12,8 @@ int main(void)
     int opcao1, opcao2;
     char nome[50];
     int matricula;
+    char **matriz;
+    int linhas;
     
     //Pergunta ao usuário o que ele deseja.
     printf("Deseja fazer qual operação:\n");
@@ -35,15 +37,14 @@ int main(void)
                 case 1:
                     printf("Informe o nome do aluno:\n");
                     scanf(" %[^\n]", nome);
-                    vetorDeString("arquivo.txt");
-                    printf("buscaSequencial-nome\n");break;
-
+                    quantLinhas("arquivo.txt");
+                    linhas=quantLinhas("arquivo.txt");
+                    vetorDeString("arquivo.txt", linhas);
+                    matriz=vetorDeString("arquivo.txt", linhas);
+                    imprimeMatriz(matriz, linhas);break;
                 case 2:
                     printf("Informe o número da matricula do aluno:\n");
-                    scanf(" %d", &matricula);
-                    printf("%d\n", matricula);
-                    printf("vetorDeString\n");
-                    printf("buscaSequencial-matricula\n");break;
+                    scanf(" %d", &matricula);break;
             }
         default:
         printf("Opção inválida!\n"); break;

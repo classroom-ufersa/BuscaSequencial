@@ -9,6 +9,10 @@ typedef struct aluno Aluno;
 int registraAluno(char* arquivo);
 
 
+int quantLinhas(char *arquivo);
+
 //Função vetorDeString.
 //Objetivo: ler e armazenar as strings do arquivo em uma matriz dinâmica.
-char vetorDeString(char *arquivo);
+char vetorDeString(char *arquivo, int linhas);
+
+void imprimeMatriz(char **matriz, int linhas);

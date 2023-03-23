@@ -45,8 +45,7 @@ int registraAluno(char *arquivo)
     fclose(fp);
 }
 
-//Implementação da função vetorDeString.
-char vetorDeString(char *arquivo)
+int quantLinhas(char *arquivo)
 {
     //Declaração das seguintes variáves:
     //1. linhaDoArquivo[50]: vetor de caracteres para armazenar uma linha do arquivo.
@@ -67,15 +66,30 @@ char vetorDeString(char *arquivo)
     while(fgets(linhaDoArquivo, 50, fp) != NULL) {
         nlinhas++;
     }
+
+    //Retorna a quantidade de linhas do arquivo.
+    return nlinhas;
+}
+
+//Implementação da função vetorDeString.
+char vetorDeString(char *arquivo, int linhas)
+{
+    char linhaDoArquivo[50];
+    int i;
+    FILE *fp;
+    //Testa se o arquivo foi encontrado e aberto.
+    fp=fopen(arquivo, "rt");
+    if(fp==NULL){
+        printf("Erro ao abrir!\n");
+        exit(1);
+    }
     
     //Alocação da matriz para armazenar as linhas do arquivo.
-    char **matriz=(char **) malloc(nlinhas*sizeof(char *));//Aloca as linhas
-    for(i=0; i<nlinhas; i++) {                              
+    char **matriz=(char **) malloc(linhas*sizeof(char *));//Aloca as linhas
+    for(i=0; i<linhas; i++) {                              
         matriz[i]=(char *) malloc(50*sizeof(char));//Aloca as colunas
     }
 
-    //A função int rewind(FILE *fp) faz voltar para o inicio do arquivo.
-    rewind(fp);
 
     //Laço de repetição para ler uma linha do arquivo e copiá-la para a matriz.
     i=0;
@@ -84,20 +98,23 @@ char vetorDeString(char *arquivo)
         i++;
     }  
 
-    //Apenas um teste para imprimir as linhas lidas.
-    printf("Strigs lidas:\n");
-    for(i=0; i<nlinhas; i++){
-        printf("%s", matriz[i]);
-    }
-
     //Fecha o arquivo
     fclose(fp);
 
-    //Libera a memória alocada.
-    for(i=0; i<nlinhas; i++){ 
+    for(i=0; i<linhas; i++){ 
         free(matriz[i]);
     }
-    free(matriz); 
+    free(matriz);
+
+    return **matriz;
 }
 
-//Implementação da função buscaSequencial
+//Implementação da função liberaMemoria
+void imprimeMatriz(char **matriz, int linhas)
+{
+    //Apenas um teste para imprimir as linhas lidas.
+    int i;
+    for(i=0; i<linhas; i++){
+        printf("%s", matriz[i]);
+    }
+}
