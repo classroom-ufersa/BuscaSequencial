@@ -1,8 +1,11 @@
+//Implementação das funções.
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 #include"aluno.h"
 
+//Implementação da struct Aluno.
 struct aluno
 {
     char nome[50];
@@ -10,10 +13,10 @@ struct aluno
     int documento;
 };
 
-//Função para registrar os dados dos alunos no arquivo.
+//Implementação da função registraAluno.
 int registraAluno(char *arquivo)
 {
-    //Declaração da variaveis e ponteiro.
+    //Declaração da variável do tipo ALuno e um ponteiro para o arquivo.
     Aluno aluno;
     FILE *fp;
     fp=fopen(arquivo, "a"); 
@@ -22,7 +25,8 @@ int registraAluno(char *arquivo)
         return 1;
     }
 
-    //Imprime na tela do usuário.
+    //Imprime as seguintes menssagens na tela do usuário.
+    //Ler as informações digitadas pelo usuário.
     printf("Informe o nome:\n");
     scanf(" %[^\n]s", aluno.nome);
     printf("Informe o número da matricula:\n");
@@ -37,11 +41,7 @@ int registraAluno(char *arquivo)
     fclose(fp);
 }
 
-//Função para ler e escrever os dados dos alunos em uma matriz dinâmica.
-//Partes da função:
-//1. Contar a quantidade de linhas do arquivo
-//2. Alocar dinamicamente usando a quantidade de linhas
-//3. Ler e preencher a matriz com o conteúdo do arquivo
+//Implementação da função vetorDeString.
 char vetorDeString(char *arquivo)
 {
     //Declaração das variaveis.
