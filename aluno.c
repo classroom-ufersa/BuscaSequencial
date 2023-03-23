@@ -1,7 +1,7 @@
 //Implementação das funções.
 
 #include<stdio.h>  //Biblioteca de entrada e saída.
-#include<string.h> //Biblioteca de funções para manipulas strings.
+#include<string.h> //Biblioteca de funções para manipular strings.
 #include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
 #include"aluno.h"  //Biblioteca criada.
 
