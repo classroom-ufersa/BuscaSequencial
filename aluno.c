@@ -99,3 +99,5 @@ char vetorDeString(char *arquivo)
     }
     free(matriz); 
 }
+
+//Implementação da função buscaSequencial

@@ -44,8 +44,9 @@ int main(void)
                     printf("%d\n", matricula);
                     printf("vetorDeString\n");
                     printf("buscaSequencial-matricula\n");break;
-                        
             }
+        default:
+        printf("Opção inválida!\n"); break;
     }
     return 0;
 }
