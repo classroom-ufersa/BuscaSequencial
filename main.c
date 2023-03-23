@@ -5,7 +5,10 @@
 
 int main(void)
 {
-    //Declaração de variaveis.
+    //Declaração das seguintes variáves:
+    //1. opcao1 e opcao2 para armazenarem as opções digitadas pelo usuário.
+    //2. nome[50] armazena o nome do aluno que o usuário deseja buscar.
+    //3. matricula armazena o número da matricula do aluno que o usuário deseja buscar.
     int opcao1, opcao2;
     char nome[50];
     int matricula;
@@ -16,6 +19,7 @@ int main(void)
     printf("Digite 2: para buscar por um aluno já cadastrado\n");
     scanf(" %d", &opcao1);
     
+    //Estrutura de decição composta por dois switch.
     switch(opcao1)
     {
         case 1:

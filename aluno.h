@@ -1,13 +1,14 @@
 //Funções do módulo aluno.h
 
-typedef struct aluno Aluno;
 //struct aluno.
 //Composta pelo tipos: char nome[50], int matricula e int documento.
+typedef struct aluno Aluno;
 
-int registraAluno(char* arquivo);
 //Função registraAluno.
-//Obejtivo: registra um aluno com os tipos da struct Aluno;
-//O ponteiro arquivo já armazena o nome do arquivo.
+//Objetivo: registra um aluno com os tipos da struct Aluno;
+int registraAluno(char* arquivo);
 
 
+//Função vetorDeString.
+//Objetivo: ler e armazenar as strings do arquivo em uma matriz dinâmica.
 char vetorDeString(char *arquivo);
