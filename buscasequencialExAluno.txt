@@ -1,0 +1,9 @@
+Neste exemplo, a estrutura Aluno é definida com os campos nome e
+matricula, representando o nome e a matrícula do aluno, respectivamente.
+Em seguida, uma lista de Aluno é definida com 5 alunos.
+
+A matrícula a ser buscada é definida na variável matriculaBuscada, e a busca
+é realizada com um loop for que percorre cada aluno da lista até encontrar a
+matrícula buscada. Se a matrícula é encontrada, uma mensagem é exibida na
+tela com o nome e a matrícula do aluno. Caso contrário, uma mensagem de
+erro é exibida indicando que a matrícula não foi encontrada.
