@@ -43,6 +43,10 @@ int registraAluno(char *arquivo)
 
     //fecha o arquivo
     fclose(fp);
+
+    if(fp=!EOF){
+        printf("Dados armazenados corretamente no arquivo\n");
+    }
 }
 
 //Implementação da função vetorDeString.
