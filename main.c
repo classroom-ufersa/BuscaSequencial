@@ -50,24 +50,20 @@ int main(void)
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
                     //A função vetorDeString é chamada e armazenada na variável matriz.
-                    matriz=vetorDeString("arquivo.txt", quantL);
-                    buscaSequencialNome(matriz, quantL, nome);break;
+                    /*matriz=vetorDeString("arquivo.txt", quantL);*/
+                    busca_sequencial(nome, "arquivo.txt");break;
                 case 2:
                     printf("Informe o número da matricula do aluno:\n");
                     scanf(" %d", &matricula);
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
                     //A função vetorDeString é chamada e armazenada na variável matriz.
-                    matriz=vetorDeString("arquivo.txt", quantL);break;
+                    /*matriz=vetorDeString("arquivo.txt", quantL);*/
+                    busca_sequencial_matricula(matricula, "arquivo.txt");break;
             }
         }
     } while (opcao1 != 3);
     
-   
-
-
-
-
     //Liberação da memória alocada dinamicamente.
     liberaMemoria(matriz, quantL);
     return 0;
