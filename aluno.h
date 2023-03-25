@@ -19,3 +19,5 @@ char **vetorDeString(char *arquivo, int nlinhas);
 //Função liberaMemoria.
 //Objetivo: libera a memoria alocada dinamicamente pela matriz.
 void liberaMemoria(char **matriz, int m);
+
+void buscaSequencialNome(char **matriz, int nlinhas, char nome[50]);
