@@ -1,6 +1,7 @@
 //Algoritmo de Busca Sequencial
 
 #include<stdio.h>
+#include<stdlib.h>
 #include"aluno.h"
 
 int main(void)
@@ -12,9 +13,10 @@ int main(void)
     int opcao1, opcao2;
     char nome[50];
     int matricula;
+    int quantL, i=0;
     char **matriz;
-    int linhas;
-    
+
+
     //Pergunta ao usuário o que ele deseja.
     printf("Deseja fazer qual operação:\n");
     printf("Digite 1: para cadastrar um novo aluno\n");
@@ -37,17 +39,17 @@ int main(void)
                 case 1:
                     printf("Informe o nome do aluno:\n");
                     scanf(" %[^\n]", nome);
-                    quantLinhas("arquivo.txt");
-                    linhas=quantLinhas("arquivo.txt");
-                    vetorDeString("arquivo.txt", linhas);
-                    matriz=vetorDeString("arquivo.txt", linhas);
-                    imprimeMatriz(matriz, linhas);break;
+                    quantL=quant_linhas("arquivo.txt");
+                    matriz=vetorDeString("arquivo.txt", quantL);break;
+
                 case 2:
                     printf("Informe o número da matricula do aluno:\n");
                     scanf(" %d", &matricula);break;
+                        
             }
-        default:
-        printf("Opção inválida!\n"); break;
     }
+
+    //Liberação da memória alocada dinamicamente.
+    liberaMemoria(matriz, quantL);
     return 0;
 }
