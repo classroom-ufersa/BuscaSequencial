@@ -1,4 +1,4 @@
-//Implementação das funções.
+//Implementação das funções do módulo aluno.h.
 
 #include<stdio.h>  //Biblioteca de entrada e saída.
 #include<string.h> //Biblioteca de funções para manipular strings.
@@ -37,13 +37,15 @@ int registraAluno(char *arquivo)
     scanf(" %d", &aluno.documento);
     
     //Escreve os dados que o usuário digitou no arquivo.
-    fprintf(fp, "%s %d %d\n", aluno.nome, aluno.matricula, aluno.documento);
+    fprintf(fp, "%s\n%d\n%d\n", aluno.nome, aluno.matricula, aluno.documento);
 
     //fecha o arquivo
     fclose(fp);
+
+    printf("\nAluno cadastrado com sucesso!\n");
 }
 
-int quant_linhas(char *arquivo)
+int quantLinhas(char *arquivo)
 {
     char linhaDoArquivo[50];
     int i=0, nlinhas=0;
@@ -101,15 +103,24 @@ char **vetorDeString(char *arquivo, int nlinhas)
         i++;
     }  
 
-    //Apenas um teste para imprimir as linhas lidas.
-    printf("Strigs lidas:\n");
-    for(i=0; i<nlinhas; i++){
-        printf("%s", matriz[i]);
-    }
-
     //Fecha o arquivo
     fclose(fp);
 
     //Retorna um ponteiro para ponteiro, para o primeiro índice da matriz.
     return matriz;
+}
+
+//Implementação da função buscaSequencialNome
+void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
+{
+    int i;
+    for (i = 0; i < nlinhas; i++) {
+        if (strcasestr(matriz[i], nome)) {
+            printf("Aluno encontrado !\n");
+            return;
+        }
+        else
+            printf("Aluno não encontrado.\n");
+            return;
+    }
 }
