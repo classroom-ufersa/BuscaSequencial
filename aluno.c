@@ -111,14 +111,28 @@ char **vetorDeString(char *arquivo, int nlinhas)
 }
 
 //Implementação da função buscaSequencialNome
-void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
+int buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
 {
     int i;
     for (i = 0; i < nlinhas; i++) {
         if (strcasestr(matriz[i], nome)) {
-            printf("Aluno encontrado !\n");
+            printf("Aluno encontrado na linha %d !\n", i);
+            return i; // retorna a linha em que o aluno foi encontrado
         }
-        else
-            printf("Aluno não encontrado.\n");
     }
+    printf("Aluno não encontrado.\n");
+    return -1; // retorna -1 se o aluno não for encontrado em nenhuma linha
+}
+
+int buscaSequencialMatricula(int *matriz, int nlinhas, int matricula)
+{
+    int i;
+    for (i = 0; i < nlinhas; i++) {
+        if (matriz[i] == matricula) {
+            printf("Matrícula encontrada na linha %d !\n", i);
+            return i; // retorna a linha em que a matrícula foi encontrada
+        }
+    }
+    printf("Matrícula não encontrada.\n");
+    return -1; // retorna -1 se a matrícula não for encontrada em nenhuma linha
 }
