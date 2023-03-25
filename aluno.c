@@ -1,4 +1,4 @@
-//Implementação das funções.
+//Implementação das funções do módulo aluno.h.
 
 #include<stdio.h>  //Biblioteca de entrada e saída.
 #include<string.h> //Biblioteca de funções para manipular strings.
