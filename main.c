@@ -1,6 +1,6 @@
 //Algoritmo de Busca Sequencial
 
-#include<stdio.h>  //Biblioteca de entrada e saída.
+#include<stdio.h>  //Biblioteca de  para entrada e saída.
 #include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
 #include"aluno.h"  //Biblioteca criada.
 
