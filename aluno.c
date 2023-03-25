@@ -16,9 +16,7 @@ struct aluno
 //Implementação da função registraAluno.
 int registraAluno(char *arquivo)
 {
-    //Declaração das seguintes variáves:
-    //1. aluno: variável do tipo struct Aluno.
-    //2. *fp: ponteiro do tipo FILE, para abrir o arquivo.
+    //Declaração das variáves.
     Aluno aluno;
     FILE *fp;
 
@@ -43,33 +41,51 @@ int registraAluno(char *arquivo)
 
     //fecha o arquivo
     fclose(fp);
+}
 
-    if(fp=!EOF){
-        printf("Dados armazenados corretamente no arquivo\n");
+int quantLinhas(char *arquivo)
+{
+    char linhaDoArquivo[50];
+    int i=0, nlinhas=0;
+    FILE *fp;
+    fp=fopen(arquivo, "rt");
+    if(fp==NULL){
+        printf("Erro ao abrir!\n");
+        return 1;
     }
+    while(fgets(linhaDoArquivo, 50, fp) != NULL){
+        nlinhas++;
+    }
+    fclose(fp);
+    return nlinhas;
+}
+
+//Implementação da função liberaMemoria
+void liberaMemoria(char **matriz, int m)
+{
+    //i é contador para o laço de repetição for.
+    int i;
+    
+    //Estrutura de repetição para liberar a memória alocada pela matriz.
+    for(i=0; i<m; i++){
+        free(matriz[i]);
+    }
+    free(matriz);
 }
 
 //Implementação da função vetorDeString.
-char vetorDeString(char *arquivo)
+char **vetorDeString(char *arquivo, int nlinhas)
 {
-    //Declaração das seguintes variáves:
-    //1. linhaDoArquivo[50]: vetor de caracteres para armazenar uma linha do arquivo.
-    //2. i e nlinhas: i é usado como contador e nlinhas armazena a quantidade de linhas do arquivo.
-    //3. *fp: ponteiro do tipo FILE, para abrir o arquivo.
+    //Declaração das variáveis.
     char linhaDoArquivo[50];
-    int i=0, nlinhas;
+    int i=0;
     FILE *fp;
 
     //Testa se o arquivo foi encontrado e aberto.
     fp=fopen(arquivo, "rt");
     if(fp==NULL){
         printf("Erro ao abrir!\n");
-        return 1;
-    }
-    
-    //Laço de repetição para contar a quantidade de linhas do arquivo.
-    while(fgets(linhaDoArquivo, 50, fp) != NULL) {
-        nlinhas++;
+        exit(1);
     }
     
     //Alocação da matriz para armazenar as linhas do arquivo.
@@ -78,12 +94,9 @@ char vetorDeString(char *arquivo)
         matriz[i]=(char *) malloc(50*sizeof(char));//Aloca as colunas
     }
 
-    //A função int rewind(FILE *fp) faz voltar para o inicio do arquivo.
-    rewind(fp);
-
     //Laço de repetição para ler uma linha do arquivo e copiá-la para a matriz.
     i=0;
-    while(fgets(linhaDoArquivo, 50, fp) != NULL) {
+    while(fgets(linhaDoArquivo, 50, fp) != NULL){
         strcpy(matriz[i], linhaDoArquivo);
         i++;
     }  
@@ -97,9 +110,6 @@ char vetorDeString(char *arquivo)
     //Fecha o arquivo
     fclose(fp);
 
-    //Libera a memória alocada.
-    for(i=0; i<nlinhas; i++){ 
-        free(matriz[i]);
-    }
-    free(matriz); 
+    //Retorna um ponteiro para ponteiro, para o primeiro índice da matriz.
+    return matriz;
 }
