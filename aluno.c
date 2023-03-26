@@ -113,35 +113,43 @@ char **vetorDeString(char *arquivo, int nlinhas)
     return matriz;
 }
 
-//Implementação da função buscaSequencialNome
-void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
+//Implementação da função buscaSequencial
+void buscaSequencial(char **matriz, int nlinhas, int op)
 {
-    int i; //1 vez: c1
-    for (i=0; i<nlinhas; i++){ // n vezes: c2
-        if(strstr(matriz[i], nome) != NULL)
-        {
-            printf("\nResultado: Aluno Encontrado.\n");
-            printf("índice da Matriz: %d.\n", i);
-            printf("Linha do Arquivo: %d.\n\n", i+1);
-            return;
+    //Declração de variáveis
+    int opcao=op; //1 vez: c1.
+    int i; //1 vez: c2.
+    //Será executavo caso o valor da variável opcao seja igual a 1.
+    if(opcao==1){
+        char nome[50]; //1 vez: c3.
+        printf("Informe o Nome do Aluno:\n");
+        scanf(" %[^\n]", nome);
+        for (i=0; i<nlinhas; i++){ // n vezes: c4.
+            if(strstr(matriz[i], nome) != NULL){
+                printf("\nResultado: Aluno Encontrado.\n");
+                printf("índice da Matriz: %d.\n", i);
+                printf("Linha do Arquivo: %d.\n\n", i+1);
+                return;
+            }
         }
-    }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
-}
+    }
 
-//Para matricula
-void buscaMatricula(char **matriz, int nlinhas, int matricula)
-{
-    char mat[20];
-    sprintf(mat, "%d", matricula);
-    int i;
-    for (i=0; i<nlinhas; i++){
-        if (strstr(matriz[i], mat) != NULL){
-            printf("\nResultado: Aluno Encontrado.\n");
-            printf("índice da Matriz: %d.\n", i);
-            printf("Linha do Arquivo: %d.\n\n", i+1);
-            return;
+    //Será executavo caso o valor da variável opcao seja igual a 2.
+    if(opcao==2){
+        int mat; //1 vez: c3.
+        printf("Informe o Número da Matricula do Aluno:\n");
+        scanf(" %d", &mat);
+        char matricula[20]; //1 vez: c4
+        sprintf(matricula, "%d", mat);
+        for (i=0; i<nlinhas; i++){ //n vezes: c5.
+            if (strstr(matriz[i], matricula) != NULL){
+                printf("\nResultado: Aluno Encontrado.\n");
+                printf("índice da Matriz: %d.\n", i);
+                printf("Linha do Arquivo: %d.\n\n", i+1);
+                return;
+            }
         }
-    }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
+    }
 }

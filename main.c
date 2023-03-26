@@ -8,8 +8,6 @@ int main(void)
 {
     //Declaração das seguintes variáves:
     int opcao1, opcao2;
-    char nome[50];
-    int matricula;
     int quantL, i=0;
     char **matriz;
 
@@ -40,21 +38,17 @@ int main(void)
             switch(opcao2)
             {
                 case 1:
-                    printf("Informe o Nome do Aluno:\n");
-                    scanf(" %[^\n]", nome);
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
                     //A função vetorDeString é chamada e armazenada na variável matriz.
                     matriz=vetorDeString("arquivo.txt", quantL);
-                    buscaSequencialNome(matriz, quantL, nome);break;
+                    buscaSequencial(matriz, quantL,opcao2);break;
                 case 2:
-                    printf("Informe o Número da Matricula do Aluno:\n");
-                    scanf(" %d", &matricula);
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
                     //A função vetorDeString é chamada e armazenada na variável matriz.
                     matriz=vetorDeString("arquivo.txt", quantL);
-                    buscaMatricula(matriz, quantL, matricula);break;
+                    buscaSequencial(matriz, quantL, opcao2);break;
             }
         }
     }
