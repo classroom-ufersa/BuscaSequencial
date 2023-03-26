@@ -21,3 +21,6 @@ char **vetorDeString(char *arquivo, int nlinhas);
 void liberaMemoria(char **matriz, int m);
 
 void buscaSequencialNome(char **matriz, int nlinhas, char nome[50]);
+
+
+void buscaMatricula(char **matriz, int nlinhas, int matricula);

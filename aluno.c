@@ -29,11 +29,11 @@ int registraAluno(char *arquivo)
 
     //Imprime as seguintes menssagens na tela do usuário.
     //Ler as informações digitadas pelo usuário.
-    printf("Informe o nome:\n");
+    printf("Informe o nome: ");
     scanf(" %[^\n]s", aluno.nome);
-    printf("Informe o número da matricula:\n");
+    printf("Informe o número da matricula: ");
     scanf(" %d", &aluno.matricula);
-    printf("Informe o número do documento:\n");
+    printf("Informe o número do documento: ");
     scanf(" %d", &aluno.documento);
     
     //Escreve os dados que o usuário digitou no arquivo.
@@ -42,7 +42,8 @@ int registraAluno(char *arquivo)
     //fecha o arquivo
     fclose(fp);
 
-    printf("\nAluno cadastrado com sucesso!\n");
+    //Informa ao usuário que o aluno foi cadastrado.
+    printf("\n--Aluno cadastrado com sucesso!--\n\n");
 }
 
 int quantLinhas(char *arquivo)
@@ -114,9 +115,25 @@ char **vetorDeString(char *arquivo, int nlinhas)
 void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
 {
     int i;
+    for (i=0; i<nlinhas; i++){
+        if(strstr(matriz[i], nome) != NULL)
+        {
+            printf("Aluno Encontrado.\n");
+            return;
+        }
+    }
+    printf("Aluno Não Encontrado.\n");
+}
+
+//Para matricula
+void buscaMatricula(char **matriz, int nlinhas, int matricula)
+{
+    char mat[20];
+    sprintf(mat, "%d", matricula);
+    int i;
     for (i=0; i<nlinhas; i++) {
-        if (strstr(matriz[i], nome) != NULL) {
-            printf("Aluno Encontrado\n");
+        if (strstr(matriz[i], mat) != NULL) {
+            printf("Aluno Encontrado.\n");
             return;
         }
     }
