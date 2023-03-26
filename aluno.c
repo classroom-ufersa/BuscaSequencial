@@ -8,7 +8,7 @@
 //Implementação da struct Aluno.
 struct aluno
 {
-    char nome[50];
+    char nome[50];  
     int matricula;
     int documento;
 };
@@ -29,11 +29,11 @@ int registraAluno(char *arquivo)
 
     //Imprime as seguintes menssagens na tela do usuário.
     //Ler as informações digitadas pelo usuário.
-    printf("Informe o nome: ");
+    printf("Informe o nome:");
     scanf(" %[^\n]s", aluno.nome);
-    printf("Informe o número da matricula: ");
+    printf("Informe o número da matricula:");
     scanf(" %d", &aluno.matricula);
-    printf("Informe o número do documento: ");
+    printf("Informe o número do documento:");
     scanf(" %d", &aluno.documento);
     
     //Escreve os dados que o usuário digitou no arquivo.
@@ -60,6 +60,7 @@ int quantLinhas(char *arquivo)
         nlinhas++;
     }
     fclose(fp);
+    printf("quantidade de linhas do arquivo: %d\n", nlinhas);
     return nlinhas;
 }
 
@@ -114,8 +115,8 @@ char **vetorDeString(char *arquivo, int nlinhas)
 //Implementação da função buscaSequencialNome
 void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
 {
-    int i;
-    for (i=0; i<nlinhas; i++){
+    int i; //1 vez: c1
+    for (i=0; i<nlinhas; i++){ // n vezes: c2
         if(strstr(matriz[i], nome) != NULL)
         {
             printf("Aluno Encontrado.\n");
