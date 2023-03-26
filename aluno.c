@@ -110,53 +110,15 @@ char **vetorDeString(char *arquivo, int nlinhas)
     return matriz;
 }
 
-
-
-
 //Implementação da função buscaSequencialNome
-void busca_sequencial(char* nome, char* arquivo) {
-    FILE* f = fopen(arquivo, "r");
-    if (f == NULL) {
-        printf("Erro ao abrir o arquivo\n");
-        return;
-    }
-    char linha[100];
-    while (fgets(linha, sizeof(linha), f)) {
-        if (strstr(linha, nome) != NULL) {
-            printf("Aluno encontrado");
-            fclose(f);
+void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
+{
+    int i;
+    for (i = 0; i<nlinhas; i++) {
+        if (strstr(matriz[i], nome) != NULL) {
+            printf("Aluno Encontrado\n");
             return;
         }
     }
-    printf("Aluno não encontrado\n");
-    fclose(f);
-}
-
-
-
-
-
-
-
-
-
-//Para buscar pela matricula.
-void busca_sequencial_matricula(int matricula, char* arquivo) {
-    FILE* f = fopen(arquivo, "r");
-    if (f == NULL) {
-        printf("Erro ao abrir o arquivo\n");
-        return;
-    }
-    char linha[100];
-    char matricula_str[20];
-    snprintf(matricula_str, sizeof(matricula_str), "%d", matricula);
-    while (fgets(linha, sizeof(linha), f)) {
-        if (strstr(linha, matricula_str) != NULL) {
-            printf("Aluno encontrado\n");
-            fclose(f);
-            return;
-        }
-    }
-    printf("Aluno não encontrado\n");
-    fclose(f);
+    printf("Aluno Não Encontrado.\n");
 }
