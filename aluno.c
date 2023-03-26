@@ -23,17 +23,18 @@ int registraAluno(char *arquivo)
     //Testa se o arquivo foi encontrado e aberto.
     fp=fopen(arquivo, "a"); 
     if(fp==NULL){
-        printf("Erro ao abrir o arquivo\n");
+        printf("Erro ao Abrir o Arquivo\n");
+        printf("Resultado: Não foi possível Cadastrar o Aluno.\n");
         return 1;
     }
 
     //Imprime as seguintes menssagens na tela do usuário.
     //Ler as informações digitadas pelo usuário.
-    printf("Informe o nome:");
+    printf("Informe o Nome:");
     scanf(" %[^\n]s", aluno.nome);
-    printf("Informe o número da matricula:");
+    printf("Informe o Número da Matricula:");
     scanf(" %d", &aluno.matricula);
-    printf("Informe o número do documento:");
+    printf("Informe o Número do Documento:");
     scanf(" %d", &aluno.documento);
     
     //Escreve os dados que o usuário digitou no arquivo.
@@ -43,7 +44,7 @@ int registraAluno(char *arquivo)
     fclose(fp);
 
     //Informa ao usuário que o aluno foi cadastrado.
-    printf("\n--Aluno cadastrado com sucesso!--\n\n");
+    printf("\nResultado: Aluno Cadastrado.\n\n");
 }
 
 int quantLinhas(char *arquivo)
@@ -60,7 +61,6 @@ int quantLinhas(char *arquivo)
         nlinhas++;
     }
     fclose(fp);
-    printf("quantidade de linhas do arquivo: %d\n", nlinhas);
     return nlinhas;
 }
 
@@ -89,6 +89,7 @@ char **vetorDeString(char *arquivo, int nlinhas)
     fp=fopen(arquivo, "rt");
     if(fp==NULL){
         printf("Erro ao abrir!\n");
+        printf("Resultado: Não foi possível Buscar o Aluno.\n");
         exit(1);
     }
     
@@ -119,11 +120,13 @@ void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
     for (i=0; i<nlinhas; i++){ // n vezes: c2
         if(strstr(matriz[i], nome) != NULL)
         {
-            printf("Aluno Encontrado.\n");
+            printf("\nResultado: Aluno Encontrado.\n");
+            printf("índice da Matriz: %d.\n", i);
+            printf("Linha do Arquivo: %d.\n\n", i+1);
             return;
         }
     }
-    printf("Aluno Não Encontrado.\n");
+    printf("\nResultado: Aluno Não Encontrado.\n\n");
 }
 
 //Para matricula
@@ -134,9 +137,11 @@ void buscaMatricula(char **matriz, int nlinhas, int matricula)
     int i;
     for (i=0; i<nlinhas; i++){
         if (strstr(matriz[i], mat) != NULL){
-            printf("Aluno Encontrado.\n");
+            printf("\nResultado: Aluno Encontrado.\n");
+            printf("índice da Matriz: %d.\n", i);
+            printf("Linha do Arquivo: %d.\n\n", i+1);
             return;
         }
     }
-    printf("Aluno Não Encontrado.\n");
+    printf("\nResultado: Aluno Não Encontrado.\n\n");
 }

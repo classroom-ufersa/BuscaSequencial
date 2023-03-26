@@ -31,16 +31,16 @@ int main(void)
         case 1:
             registraAluno("arquivo.txt");break;
         case 2:
-            printf("Deseja buscar um aluno por qual dado:\n");
-            printf("Digite 1: para buscar pelo nome\n");
-            printf("Digite 2: para buscar pelo número da matricula\n");
+            printf("Deseja Buscar Por Qual Dado:\n");
+            printf("[1] - Nome\n");
+            printf("[2] - Matricula\n");
             scanf(" %d", &opcao2);
 
             //Segundo switch.
             switch(opcao2)
             {
                 case 1:
-                    printf("Informe o nome do aluno:\n");
+                    printf("Informe o Nome do Aluno:\n");
                     scanf(" %[^\n]", nome);
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
@@ -48,7 +48,7 @@ int main(void)
                     matriz=vetorDeString("arquivo.txt", quantL);
                     buscaSequencialNome(matriz, quantL, nome);break;
                 case 2:
-                    printf("Informe o número da matricula do aluno:\n");
+                    printf("Informe o Número da Matricula do Aluno:\n");
                     scanf(" %d", &matricula);
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
