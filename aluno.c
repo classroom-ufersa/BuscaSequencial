@@ -114,7 +114,7 @@ char **vetorDeString(char *arquivo, int nlinhas)
 void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
 {
     int i;
-    for (i = 0; i<nlinhas; i++) {
+    for (i=0; i<nlinhas; i++) {
         if (strstr(matriz[i], nome) != NULL) {
             printf("Aluno Encontrado\n");
             return;
