@@ -131,8 +131,8 @@ void buscaMatricula(char **matriz, int nlinhas, int matricula)
     char mat[20];
     sprintf(mat, "%d", matricula);
     int i;
-    for (i=0; i<nlinhas; i++) {
-        if (strstr(matriz[i], mat) != NULL) {
+    for (i=0; i<nlinhas; i++){
+        if (strstr(matriz[i], mat) != NULL){
             printf("Aluno Encontrado.\n");
             return;
         }
