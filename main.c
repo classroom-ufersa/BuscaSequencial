@@ -33,24 +33,24 @@ int main(void)
             printf("[2] - Matricula\n");
             printf("[3] - Voltar\n");
             scanf(" %d", &opcao2);
-            do{
-                switch(opcao2){
-                case 1:
-                    //A função quantLinhas é chamada e armazenada na variável quantL.
-                    quantL=quantLinhas("arquivo.txt");
-                    //A função vetorDeString é chamada e armazenada na variável matriz.
-                    matriz=vetorDeString("arquivo.txt", quantL);
-                    buscaSequencial(matriz, quantL,opcao2);break;
-                case 2:
-                    //A função quantLinhas é chamada e armazenada na variável quantL.
-                    quantL=quantLinhas("arquivo.txt");
-                    //A função vetorDeString é chamada e armazenada na variável matriz.
-                    matriz=vetorDeString("arquivo.txt", quantL);
-                    buscaSequencial(matriz, quantL, opcao2);break;
-                }
+
+            switch(opcao2){
+            case 1:
+                //A função quantLinhas é chamada e armazenada na variável quantL.
+                quantL=quantLinhas("arquivo.txt");
+                //A função vetorDeString é chamada e armazenada na variável matriz.
+                matriz=vetorDeString("arquivo.txt", quantL);
+                buscaSequencial(matriz, quantL,opcao2);break;
+            case 2:
+                //A função quantLinhas é chamada e armazenada na variável quantL.
+                quantL=quantLinhas("arquivo.txt");
+                //A função vetorDeString é chamada e armazenada na variável matriz.
+                matriz=vetorDeString("arquivo.txt", quantL);
+                 buscaSequencial(matriz, quantL, opcao2);break;
+            default:
+                printf("Opção Inválida.\n");
+                
             }
-            //Condição para sair do laço de repetição
-            while (opcao2 != 3);
         }
     }
     //Condição para sair do laço de repetição

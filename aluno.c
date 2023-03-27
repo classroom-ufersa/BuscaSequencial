@@ -3,6 +3,7 @@
 #include<stdio.h>  //Biblioteca de entrada e saída.
 #include<string.h> //Biblioteca de funções para manipular strings.
 #include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
+#include<time.h>   //
 #include"aluno.h"  //Biblioteca criada.
 
 //Implementação da struct Aluno.
@@ -116,6 +117,9 @@ char **vetorDeString(char *arquivo, int nlinhas)
 //Implementação da função buscaSequencial
 void buscaSequencial(char **matriz, int nlinhas, int op)
 {
+    double tempo;
+    time_t TempoInicial, TempoFinal;
+    TempoInicial=clock();
     //Declração de variáveis
     int opcao=op; //1 vez: c1.
     int i; //1 vez: c2.
@@ -129,10 +133,16 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
                 printf("\nResultado: Aluno Encontrado.\n");
                 printf("índice da Matriz: %d.\n", i);
                 printf("Linha do Arquivo: %d.\n\n", i+1);
+                TempoFinal=clock();
+                tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
+                printf("Tempo de execução: %f\n", tempo);
                 return;
             }
         }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
+    TempoFinal=clock();
+    tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
+    printf("Tempo de execução: %f\n", tempo);
     }
 
     //Será executavo caso o valor da variável opcao seja igual a 2.
@@ -147,9 +157,16 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
                 printf("\nResultado: Aluno Encontrado.\n");
                 printf("índice da Matriz: %d.\n", i);
                 printf("Linha do Arquivo: %d.\n\n", i+1);
+                TempoFinal=clock();
+                tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
+                printf("Tempo de execução: %f\n", tempo);
                 return;
             }
         }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
+    TempoFinal=clock();
+    tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
+    printf("Tempo de execução: %f\n", tempo);
     }
+    
 }
