@@ -131,8 +131,9 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
         for (i=0; i<nlinhas; i++){ // n vezes: c4.
             if(strstr(matriz[i], nome) != NULL){
                 printf("\nResultado: Aluno Encontrado.\n");
-                printf("índice da Matriz: %d.\n", i);
+                printf("Índice da Matriz: %d.\n", i);
                 printf("Linha do Arquivo: %d.\n\n", i+1);
+                
                 TempoFinal=clock();
                 tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
                 printf("Tempo de execução: %f\n", tempo);
@@ -140,6 +141,7 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
             }
         }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
+
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f\n", tempo);
@@ -155,8 +157,9 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
         for (i=0; i<nlinhas; i++){ //n vezes: c5.
             if (strstr(matriz[i], matricula) != NULL){
                 printf("\nResultado: Aluno Encontrado.\n");
-                printf("índice da Matriz: %d.\n", i);
+                printf("Índice da Matriz: %d.\n", i);
                 printf("Linha do Arquivo: %d.\n\n", i+1);
+                
                 TempoFinal=clock();
                 tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
                 printf("Tempo de execução: %f\n", tempo);
@@ -164,6 +167,7 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
             }
         }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
+    
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f\n", tempo);
