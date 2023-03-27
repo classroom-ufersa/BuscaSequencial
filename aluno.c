@@ -22,7 +22,7 @@ int registraAluno(char *arquivo)
 
     //Testa se o arquivo foi encontrado e aberto.
     fp=fopen(arquivo, "a"); 
-    if(fp==NULL){
+    if(fp == NULL){
         printf("Erro ao Abrir o Arquivo\n");
         printf("Resultado: Não foi possível Cadastrar o Aluno.\n");
         return 1;
@@ -53,7 +53,7 @@ int quantLinhas(char *arquivo)
     int i=0, nlinhas=0;
     FILE *fp;
     fp=fopen(arquivo, "rt");
-    if(fp==NULL){
+    if(fp == NULL){
         printf("Erro ao abrir!\n");
         return 1;
     }
@@ -87,7 +87,7 @@ char **vetorDeString(char *arquivo, int nlinhas)
 
     //Testa se o arquivo foi encontrado e aberto.
     fp=fopen(arquivo, "rt");
-    if(fp==NULL){
+    if(fp == NULL){
         printf("Erro ao abrir!\n");
         printf("Resultado: Não foi possível Buscar o Aluno.\n");
         exit(1);
@@ -120,7 +120,7 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
     int opcao=op; //1 vez: c1.
     int i; //1 vez: c2.
     //Será executavo caso o valor da variável opcao seja igual a 1.
-    if(opcao==1){
+    if(opcao == 1){
         char nome[50]; //1 vez: c3.
         printf("Informe o Nome do Aluno:\n");
         scanf(" %[^\n]", nome);
@@ -136,7 +136,7 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
     }
 
     //Será executavo caso o valor da variável opcao seja igual a 2.
-    if(opcao==2){
+    if(opcao == 2){
         int mat; //1 vez: c3.
         printf("Informe o Número da Matricula do Aluno:\n");
         scanf(" %d", &mat);
