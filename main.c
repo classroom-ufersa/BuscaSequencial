@@ -8,14 +8,11 @@ int main(void)
 {
     //Declaração das seguintes variáves:
     int opcao1, opcao2;
-    char nome[50];
-    int matricula;
     int quantL, i=0;
     char **matriz;
 
     //Inicio dos laços de repetição
-    do
-    {
+    do{
         //Pergunta ao usuário o que ele deseja.
         printf("------------------------\n");
         printf("---  MENU DE OPÇÕES  ---\n");
@@ -31,31 +28,29 @@ int main(void)
         case 1:
             registraAluno("arquivo.txt");break;
         case 2:
-            printf("Deseja buscar um aluno por qual dado:\n");
-            printf("Digite 1: para buscar pelo nome\n");
-            printf("Digite 2: para buscar pelo número da matricula\n");
+            printf("Deseja Buscar Por Qual Dado:\n");
+            printf("[1] - Nome\n");
+            printf("[2] - Matricula\n");
+            printf("[3] - Voltar\n");
             scanf(" %d", &opcao2);
-
-            //Segundo switch.
-            switch(opcao2)
-            {
+            do{
+                switch(opcao2){
                 case 1:
-                    printf("Informe o nome do aluno:\n");
-                    scanf(" %[^\n]", nome);
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
                     //A função vetorDeString é chamada e armazenada na variável matriz.
                     matriz=vetorDeString("arquivo.txt", quantL);
-                    buscaSequencialNome(matriz, quantL, nome);break;
+                    buscaSequencial(matriz, quantL,opcao2);break;
                 case 2:
-                    printf("Informe o número da matricula do aluno:\n");
-                    scanf(" %d", &matricula);
                     //A função quantLinhas é chamada e armazenada na variável quantL.
                     quantL=quantLinhas("arquivo.txt");
                     //A função vetorDeString é chamada e armazenada na variável matriz.
                     matriz=vetorDeString("arquivo.txt", quantL);
-                    buscaMatricula(matriz, quantL, matricula);break;
+                    buscaSequencial(matriz, quantL, opcao2);break;
+                }
             }
+            //Condição para sair do laço de repetição
+            while (opcao2 != 3);
         }
     }
     //Condição para sair do laço de repetição
