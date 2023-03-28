@@ -31,7 +31,6 @@ int main(void)
             printf("Deseja Buscar Por Qual Dado:\n");
             printf("[1] - Nome\n");
             printf("[2] - Matricula\n");
-            printf("[3] - Voltar\n");
             scanf(" %d", &opcao2);
 
             switch(opcao2){

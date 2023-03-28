@@ -120,53 +120,59 @@ void buscaSequencial(char **matriz, int nlinhas, int op)
     double tempo;
     time_t TempoInicial, TempoFinal;
     TempoInicial=clock();
+
     //Declração de variáveis
-    int opcao=op; //1 vez: c1.
-    int i; //1 vez: c2.
-    //Será executavo caso o valor da variável opcao seja igual a 1.
-    if(opcao == 1){
-        char nome[50]; //1 vez: c3.
+    int opcao=op; 
+    int i; 
+
+    //Será executado caso o valor da variável opcao seja igual a 1.
+    if(opcao == 1){ 
+        char nome[50]; 
         printf("Informe o Nome do Aluno:\n");
         scanf(" %[^\n]", nome);
-        for (i=0; i<nlinhas; i++){ // n vezes: c4.
-            if(strstr(matriz[i], nome) != NULL){
+        for (i=0; i<nlinhas; i++){ 
+            if(strstr(matriz[i], nome) != NULL){ 
                 printf("\nResultado: Aluno Encontrado.\n");
-                printf("índice da Matriz: %d.\n", i);
+                printf("Índice da Matriz: %d.\n", i);
                 printf("Linha do Arquivo: %d.\n\n", i+1);
+                
                 TempoFinal=clock();
                 tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
-                printf("Tempo de execução: %f\n", tempo);
+                printf("Tempo de execução: %f.\n", tempo);
                 return;
             }
         }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
+
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
-    printf("Tempo de execução: %f\n", tempo);
+    printf("Tempo de execução: %f.\n", tempo);
     }
 
-    //Será executavo caso o valor da variável opcao seja igual a 2.
-    if(opcao == 2){
-        int mat; //1 vez: c3.
+    //Será executado caso o valor da variável opcao seja igual a 2.
+    if(opcao == 2){ 
+        int mat; 
         printf("Informe o Número da Matricula do Aluno:\n");
         scanf(" %d", &mat);
-        char matricula[20]; //1 vez: c4
+        char matricula[20]; 
         sprintf(matricula, "%d", mat);
-        for (i=0; i<nlinhas; i++){ //n vezes: c5.
-            if (strstr(matriz[i], matricula) != NULL){
+        for (i=0; i<nlinhas; i++){ 
+            if (strstr(matriz[i], matricula) != NULL){ 
                 printf("\nResultado: Aluno Encontrado.\n");
-                printf("índice da Matriz: %d.\n", i);
+                printf("Índice da Matriz: %d.\n", i);
                 printf("Linha do Arquivo: %d.\n\n", i+1);
+                
                 TempoFinal=clock();
                 tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
-                printf("Tempo de execução: %f\n", tempo);
+                printf("Tempo de execução: %f.\n", tempo);
                 return;
             }
         }
     printf("\nResultado: Aluno Não Encontrado.\n\n");
+    
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
-    printf("Tempo de execução: %f\n", tempo);
+    printf("Tempo de execução: %f.\n", tempo);
     }
     
 }
