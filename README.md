@@ -16,7 +16,7 @@ O algoritmo de busca sequencial ou linear é um algoritmo de busca em que um det
 A complexida do algoritmo de busca é O(n).
 
 ## Como compilar e executar:
-Para compilar e executa este código fonte, execute a seguinte linha de comando no terminal:
+Para compilar e executa este código, execute a seguinte linha de comando no terminal:
 
 Linux/bash: gcc -c aluno.c && gcc -c main.c && gcc -o prog aluno.o main.o && ./prog
 
