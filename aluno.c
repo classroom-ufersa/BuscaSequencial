@@ -114,65 +114,79 @@ char **vetorDeString(char *arquivo, int nlinhas)
     return matriz;
 }
 
-//Implementação da função buscaSequencial
-void buscaSequencial(char **matriz, int nlinhas, int op)
+//Implementação da função buscaSequencialNome.
+void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
 {
+    //Declaração das variáveis.
     double tempo;
     time_t TempoInicial, TempoFinal;
     TempoInicial=clock();
-
-    //Declração de variáveis
-    int opcao=op; 
     int i; 
 
-    //Será executado caso o valor da variável opcao seja igual a 1.
-    if(opcao == 1){ 
-        char nome[50]; 
-        printf("Informe o Nome do Aluno:\n");
-        scanf(" %[^\n]", nome);
-        for (i=0; i<nlinhas; i++){ 
-            if(strstr(matriz[i], nome) != NULL){ 
-                printf("\nResultado: Aluno Encontrado.\n");
-                printf("Índice da Matriz: %d.\n", i);
-                printf("Linha do Arquivo: %d.\n\n", i+1);
-                
-                TempoFinal=clock();
-                tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
-                printf("Tempo de execução: %f.\n", tempo);
-                return;
+    //Laço de repetição para encontrar o nome do aluno na matriz.
+    for(i=0; i<nlinhas; i++){
+
+        //A função strstr, retorna um ponteiro para o primeiro caractere da ocorrência da substring nome[50] dentro da strig matriz[i].
+        //Caso a não ocorra nenhuma ocorrência a função strstr retorna NULL.
+        if(strstr(matriz[i], nome) != NULL){ 
+
+            //Imprime o resultado caso o nome do aluno seja encontrado.
+            printf("\nResultado: Aluno Encontrado.\n");
+            printf("Índice da Matriz: %d.\n", i);
+            printf("Linha do Arquivo: %d.\n\n", i+1);
+            
+            //Imprime o tempo de execução.
+            TempoFinal=clock();
+            tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
+            printf("Tempo de execução: %f.\n", tempo);
+            return;
             }
         }
-    printf("\nResultado: Aluno Não Encontrado.\n\n");
 
+    //Imprime o resultado caso o nome do aluno não seja encontrado.
+
+    //Imprime o tempo de execução.
+    printf("\nResultado: Aluno Não Encontrado.\n\n");
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f.\n", tempo);
-    }
+}
 
-    //Será executado caso o valor da variável opcao seja igual a 2.
-    if(opcao == 2){ 
-        int mat; 
-        printf("Informe o Número da Matricula do Aluno:\n");
-        scanf(" %d", &mat);
-        char matricula[20]; 
-        sprintf(matricula, "%d", mat);
-        for (i=0; i<nlinhas; i++){ 
-            if (strstr(matriz[i], matricula) != NULL){ 
-                printf("\nResultado: Aluno Encontrado.\n");
-                printf("Índice da Matriz: %d.\n", i);
-                printf("Linha do Arquivo: %d.\n\n", i+1);
-                
-                TempoFinal=clock();
-                tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
-                printf("Tempo de execução: %f.\n", tempo);
-                return;
+//Implementação da função buscaSequencialMatricula.
+void buscaSequencialMatricula(char **matriz, int nlinhas, int matricula)
+{
+    //Declaração das variáveis.
+    double tempo;
+    time_t TempoInicial, TempoFinal;
+    TempoInicial=clock();
+    char mat[20];
+    int i;
+
+    //A função sprintf paconverte a variável matricula para o tipo char.
+    sprintf(mat, "%d", matricula);
+
+    //Laço de repetição para encontrar o número da matricula do aluno na matriz.
+    for(i=0; i<nlinhas; i++){ 
+        if (strstr(matriz[i], mat) != NULL){
+
+            //Imprime o resultado caso o nome do aluno seja encontrado.
+            printf("\nResultado: Aluno Encontrado.\n");
+            printf("Índice da Matriz: %d.\n", i);
+            printf("Linha do Arquivo: %d.\n\n", i+1);
+            
+            //Imprime o tempo de execução.
+            TempoFinal=clock();
+            tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
+            printf("Tempo de execução: %f.\n", tempo);
+            return;
             }
         }
+
+    //Imprime o resultado caso o nome do aluno não seja encontrado.
     printf("\nResultado: Aluno Não Encontrado.\n\n");
     
+    //Imprime o tempo de execução.
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f.\n", tempo);
-    }
-    
 }
