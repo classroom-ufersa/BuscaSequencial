@@ -3,8 +3,8 @@
 #include<stdio.h>  //Biblioteca de entrada e saída.
 #include<string.h> //Biblioteca de funções para manipular strings.
 #include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
-#include<time.h>   //
-#include"aluno.h"  //Biblioteca criada.
+#include<time.h>   //Biblioteca de funções para manipular unidades de tempo.
+#include"aluno.h"  //Módulo criado.
 
 //Implementação da struct Aluno.
 struct aluno
@@ -95,9 +95,9 @@ char **vetorDeString(char *arquivo, int nlinhas)
     }
     
     //Alocação da matriz para armazenar as linhas do arquivo.
-    char **matriz=(char **) malloc(nlinhas*sizeof(char *));//Aloca as linhas
+    char **matriz=(char **) malloc(nlinhas*sizeof(char *));//Aloca as linhas.
     for(i=0; i<nlinhas; i++) {                              
-        matriz[i]=(char *) malloc(50*sizeof(char));//Aloca as colunas
+        matriz[i]=(char *) malloc(50*sizeof(char));//Aloca as colunas.
     }
 
     //Laço de repetição para ler uma linha do arquivo e copiá-la para a matriz.
@@ -121,14 +121,15 @@ void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
     double tempo;
     time_t TempoInicial, TempoFinal;
     TempoInicial=clock();
-    int i; 
+    
+    int i; //Executa 1 vez: c1
 
     //Laço de repetição para encontrar o nome do aluno na matriz.
-    for(i=0; i<nlinhas; i++){
+    for(i=0; i<nlinhas; i++){ //Executa n vezes: c2
 
         //A função strstr, retorna um ponteiro para o primeiro caractere da ocorrência da substring nome[50] dentro da strig matriz[i].
         //Caso a não ocorra nenhuma ocorrência a função strstr retorna NULL.
-        if(strstr(matriz[i], nome) != NULL){ 
+        if(strstr(matriz[i], nome) != NULL){ //Executa n vezes: c3
 
             //Imprime o resultado caso o nome do aluno seja encontrado.
             printf("\nResultado: Aluno Encontrado.\n");
@@ -150,24 +151,37 @@ void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f.\n", tempo);
+    /*
+    Análise da complexidade da função buscaSequencialNome:
+    T(n)=c1+c2*n+c3*n
+    T(n)=n*(c2+c3)+c1: Tempo de Execução Linear.
+    ----
+    Notação big-o:
+    T(n)= O(n). 
+    */
 }
 
 //Implementação da função buscaSequencialMatricula.
 void buscaSequencialMatricula(char **matriz, int nlinhas, int matricula)
 {
-    //Declaração das variáveis.
+    //Declaração das variáveis para o calculo do tempo de execução.
     double tempo;
     time_t TempoInicial, TempoFinal;
     TempoInicial=clock();
-    char mat[20];
-    int i;
+    
+    //Declaração de variáveis para a função buscaSequencialMatricula.
+    char mat[20]; //Executa 1 vez: c1.
+    int i; //Executa 1 vez: c2.
 
     //A função sprintf paconverte a variável matricula para o tipo char.
     sprintf(mat, "%d", matricula);
 
     //Laço de repetição para encontrar o número da matricula do aluno na matriz.
-    for(i=0; i<nlinhas; i++){ 
-        if (strstr(matriz[i], mat) != NULL){
+    for(i=0; i<nlinhas; i++){ //Executa n vezes: c3.
+        
+        //A função strstr, retorna um ponteiro para o primeiro caractere da ocorrência da substring nome[50] dentro da strig matriz[i].
+        //Caso a não ocorra nenhuma ocorrência a função strstr retorna NULL.
+        if(strstr(matriz[i], mat) != NULL){ //Executa n vezes: c4.
 
             //Imprime o resultado caso o nome do aluno seja encontrado.
             printf("\nResultado: Aluno Encontrado.\n");
@@ -189,4 +203,12 @@ void buscaSequencialMatricula(char **matriz, int nlinhas, int matricula)
     TempoFinal=clock();
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f.\n", tempo);
+    /*
+    Análise da complexidade da função buscaSequencialMatricula:
+    T(n)=c1+c2+c3*n+c4*n
+    T(n)=n*(c3+c4)+c1+c2: Tempo de Execução Linear.
+    ----
+    Notação big-o:
+    T(n)= O(n). 
+    */
 }

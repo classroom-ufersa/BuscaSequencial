@@ -21,8 +21,9 @@ char **vetorDeString(char *arquivo, int nlinhas);
 void liberaMemoria(char **matriz, int m);
 
 //Função buscaSequencialNome.
-//Objetivo: busca pelo nome ou número da matricula de um aluno.
+//Objetivo: busca pelo nome de um aluno.
 void buscaSequencialNome(char **matriz, int nlinhas, char nome[50]);
 
-
+//Função buscaSequencialMatricula.
+//Objetivo: busca pelo número da matrícula de um aluno.
 void buscaSequencialMatricula(char **matriz, int nlinhas, int matricula);

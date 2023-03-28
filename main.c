@@ -2,7 +2,7 @@
 
 #include<stdio.h>  //Biblioteca de funções para entrada e saída.
 #include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
-#include"aluno.h"  //Biblioteca criada.
+#include"aluno.h"  //Módulo criado.
 
 int main(void)
 {
@@ -34,7 +34,8 @@ int main(void)
             printf("[1] - Nome\n");
             printf("[2] - Matricula\n");
             scanf(" %d", &opcao2);
-
+            
+            //Segundo switch.
             switch(opcao2){
             case 1:
                 printf("Informe o Nome do Aluno:");
@@ -51,7 +52,7 @@ int main(void)
                 quantL=quantLinhas("arquivo.txt");
                 //A função vetorDeString é chamada e armazenada na variável matriz.
                 matriz=vetorDeString("arquivo.txt", quantL);
-                 buscaSequencialMatricula(matriz, quantL, matricula);break;
+                buscaSequencialMatricula(matriz, quantL, matricula);break;
             default:
                 printf("Opção Inválida.\n");
                 
@@ -59,9 +60,10 @@ int main(void)
         }
     }
     //Condição para sair do laço de repetição
-    while (opcao1 != 3);
+    while(opcao1 != 3);
     
     //Liberação da memória alocada dinamicamente.
     liberaMemoria(matriz, quantL);
+    
     return 0;
 }
