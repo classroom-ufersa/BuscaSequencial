@@ -1,5 +1,8 @@
 # BuscaSequencial
-Algoritmo de busca linear ou sequencial
+# Descrição: O algoritmo de busca sequencial ou linear.
+
+
+
 
 # Como compilar e executar:
 Para compilar e executa este código fonte, execute a seguinte linha de comando no terminal:
