@@ -1,5 +1,5 @@
 # BuscaSequencial
-O algoritmo de busca sequencial ou linear é um algoritmo de busca em que um determinado elemento é pesquisado acessando índice por índice de um vetor ou uma matriz, seja ele um vetor ou uma matriz, ordenados ou não ordenados, até encontrar o elemento.
+O algoritmo de busca sequencial ou linear é um algoritmo de busca em que um determinado elemento é pesquisado e comparado acessando índice por índice de um vetor ou uma matriz, seja ele um vetor ou uma matriz, ordenados ou não ordenados, até encontrar o elemento.
 
 ## Vantagens:
 - A busca é rápida para listas pequenas ou médias.
@@ -12,6 +12,8 @@ O algoritmo de busca sequencial ou linear é um algoritmo de busca em que um det
 
 - Se o elemento que é pesquisado estiver no último índice da matriz ou do vetor, teremos que comparar o elemento pesquisando com todos os elementos anteriores.
 
+## Complexidade 
+A complexida do algoritmo de busca é O(n).
 
 ## Como compilar e executar:
 Para compilar e executa este código fonte, execute a seguinte linha de comando no terminal:
