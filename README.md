@@ -1,5 +1,5 @@
 # BuscaSequencial
-# Descrição: O algoritmo de busca sequencial ou linear.
+## Descrição: O algoritmo de busca sequencial ou linear.
 
 
 
