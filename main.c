@@ -10,6 +10,8 @@ int main(void)
     int opcao1, opcao2;
     int quantL, i=0;
     char **matriz;
+    char nome[50];
+    int matricula;
 
     //Inicio dos laços de repetição
     do{
@@ -31,22 +33,25 @@ int main(void)
             printf("Deseja Buscar Por Qual Dado:\n");
             printf("[1] - Nome\n");
             printf("[2] - Matricula\n");
-            printf("[3] - Voltar\n");
             scanf(" %d", &opcao2);
 
             switch(opcao2){
             case 1:
+                printf("Informe o Nome do Aluno:");
+                scanf(" %[^\n]", nome);
                 //A função quantLinhas é chamada e armazenada na variável quantL.
                 quantL=quantLinhas("arquivo.txt");
                 //A função vetorDeString é chamada e armazenada na variável matriz.
                 matriz=vetorDeString("arquivo.txt", quantL);
-                buscaSequencial(matriz, quantL,opcao2);break;
+                buscaSequencialNome(matriz, quantL, nome);break;
             case 2:
+                printf("Informe o Número da Matrícula do Aluno:");
+                scanf(" %d", &matricula);
                 //A função quantLinhas é chamada e armazenada na variável quantL.
                 quantL=quantLinhas("arquivo.txt");
                 //A função vetorDeString é chamada e armazenada na variável matriz.
                 matriz=vetorDeString("arquivo.txt", quantL);
-                 buscaSequencial(matriz, quantL, opcao2);break;
+                 buscaSequencialMatricula(matriz, quantL, matricula);break;
             default:
                 printf("Opção Inválida.\n");
                 
