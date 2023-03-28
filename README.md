@@ -3,12 +3,15 @@
 O algoritmo de busca sequencial ou linear, é um algoritmo de busca 
 
 ## Vantagens:
-.A busca é rápida para listas pequenas ou médias.
-.Não é necessário ordenar os elesmentos da lista.
-.A pesquisa não é afetada se algum elemento for inserido ou excluído.
+- A busca é rápida para listas pequenas ou médias.
+
+- Não é necessário ordenar os elesmentos da lista.
+
+- A pesquisa não é afetada se algum elemento for inserido ou excluído.
 ## Desvantagens:
-.O processo de pesquisa é lento para uma matriz grande.
-.Se o elemento que é pesquisado estiver no último índice da matriz ou do vetor, teremos que comparar o elemento pesquisando com todos os elementos anteriores.
+- O processo de pesquisa é lento para uma matriz grande.
+
+- Se o elemento que é pesquisado estiver no último índice da matriz ou do vetor, teremos que comparar o elemento pesquisando com todos os elementos anteriores.
 
 
 ## Como compilar e executar:
