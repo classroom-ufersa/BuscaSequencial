@@ -3,8 +3,8 @@
 #include<stdio.h>  //Biblioteca de entrada e saída.
 #include<string.h> //Biblioteca de funções para manipular strings.
 #include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
-#include<time.h>   //
-#include"aluno.h"  //Biblioteca criada.
+#include<time.h>   //Biblioteca de funções para manipular unidades de tempo.
+#include"aluno.h"  //Módulo criado.
 
 //Implementação da struct Aluno.
 struct aluno
@@ -152,6 +152,7 @@ void buscaSequencialNome(char **matriz, int nlinhas, char nome[50])
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f.\n", tempo);
     /*
+    Análise da complexidade da função buscaSequencialNome:
     T(n)=c1+c2*n+c3*n
     T(n)=n*(c2+c3)+c1: Tempo de Execução Linear.
     ----
@@ -203,6 +204,7 @@ void buscaSequencialMatricula(char **matriz, int nlinhas, int matricula)
     tempo=((double)(TempoFinal-TempoInicial))/CLOCKS_PER_SEC;
     printf("Tempo de execução: %f.\n", tempo);
     /*
+    Análise da complexidade da função buscaSequencialMatricula:
     T(n)=c1+c2+c3*n+c4*n
     T(n)=n*(c3+c4)+c1+c2: Tempo de Execução Linear.
     ----

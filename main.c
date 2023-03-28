@@ -2,7 +2,7 @@
 
 #include<stdio.h>  //Biblioteca de funções para entrada e saída.
 #include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
-#include"aluno.h"  //Biblioteca criada.
+#include"aluno.h"  //Módulo criado.
 
 int main(void)
 {
