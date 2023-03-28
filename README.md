@@ -14,6 +14,7 @@ O algoritmo de busca sequencial ou linear é um algoritmo de busca em que um det
 
 ## Complexidade 
 O algoritmo de busca tem o tempo de execução linear.
+
 A complexida do algoritmo de busca é O(n).
 
 ## Como compilar e executar:
