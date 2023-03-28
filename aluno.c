@@ -95,9 +95,9 @@ char **vetorDeString(char *arquivo, int nlinhas)
     }
     
     //Alocação da matriz para armazenar as linhas do arquivo.
-    char **matriz=(char **) malloc(nlinhas*sizeof(char *));//Aloca as linhas
+    char **matriz=(char **) malloc(nlinhas*sizeof(char *));//Aloca as linhas.
     for(i=0; i<nlinhas; i++) {                              
-        matriz[i]=(char *) malloc(50*sizeof(char));//Aloca as colunas
+        matriz[i]=(char *) malloc(50*sizeof(char));//Aloca as colunas.
     }
 
     //Laço de repetição para ler uma linha do arquivo e copiá-la para a matriz.
