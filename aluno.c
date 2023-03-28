@@ -50,18 +50,27 @@ int registraAluno(char *arquivo)
 
 int quantLinhas(char *arquivo)
 {
+    //Declaração das variáveis.
     char linhaDoArquivo[50];
     int i=0, nlinhas=0;
     FILE *fp;
     fp=fopen(arquivo, "rt");
+
+    //Testa se o arquivo foi encontrado e aberto.
     if(fp == NULL){
         printf("Erro ao abrir!\n");
         return 1;
     }
+
+    //Laço de repetição para contar a quantidade de linhas do arquivo.
     while(fgets(linhaDoArquivo, 50, fp) != NULL){
         nlinhas++;
     }
+
+    //Fecha o arquivo.
     fclose(fp);
+
+    //Retorna a quantidade de linhas do arquivo.
     return nlinhas;
 }
 
