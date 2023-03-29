@@ -1,10 +1,10 @@
 //Implementação das funções do módulo aluno.h.
 
-#include<stdio.h>  //Biblioteca de entrada e saída.
-#include<string.h> //Biblioteca de funções para manipular strings.
-#include<stdlib.h> //Biblioteca de funções para alocação dinâmica.
-#include<time.h>   //Biblioteca de funções para manipular unidades de tempo.
-#include"aluno.h"  //Módulo criado.
+#include <stdio.h>  //Biblioteca de entrada e saída.
+#include <string.h> //Biblioteca de funções para manipular strings.
+#include <stdlib.h> //Biblioteca de funções para alocação dinâmica.
+#include <time.h>   //Biblioteca de funções para manipular unidades de tempo.
+#include "aluno.h"  //Módulo criado.
 
 //Implementação da struct Aluno.
 struct aluno
